@@ -1,0 +1,87 @@
+.main-color {
+    background: #1DC7EA;
+    background: -moz-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1DC7EA), color-stop(100%, #4091ff));
+    background: -webkit-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
+    background: -o-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
+    background: -ms-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
+    background: linear-gradient(to bottom, #1DC7EA 0%, #4091ff 100%);
+    background-size: 150% 150%;
+}
+
+.container-middle {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.row-middle {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.font-white {
+    color: #ffffff;
+}
+
+.font-title-login {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.btn-login {
+    border: 1px solid #FFFFFF;
+    background: rgba(255, 255, 255, 0.14);
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.modal-loading-main {
+    display: none;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+}
+
+.modal-loading-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-loading-table-cell {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.modal-loading-img {
+    display: block;
+    margin: auto auto;
+}
+
+.table-filter, .table-footer {
+    overflow: auto auto;
+    padding: 15px 15px 0 15px;
+}
+
+.table-filter input, select {
+    border: 1px solid #E3E3E3;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.btn-record {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
