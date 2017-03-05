@@ -67,8 +67,11 @@ class SessionsController extends Controller
      * @access public
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function destroy()
+    public function destroy(Request $request)
     {
+        // Clear the session first
+        $request->session()->flush();
+        // Logout the user
         Auth::logout();
         return redirect()->route('sessions.create')->with('message', 'Logout successfully.');
     }

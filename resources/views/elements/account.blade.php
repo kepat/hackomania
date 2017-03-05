@@ -5,8 +5,6 @@
             <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="#">Update</a></li>
-            <li class="divider"></li>
             <li><a href="{{ route('sessions.destroy') }}">Logout</a></li>
         </ul>
     </li>

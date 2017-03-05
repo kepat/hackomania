@@ -168,6 +168,7 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         Ramsey\Laravel\OAuth2\Instagram\InstagramServiceProvider::class,
+        Vinkla\Facebook\FacebookServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -237,7 +238,8 @@ return [
          */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Instagram' => Ramsey\Laravel\OAuth2\Instagram\Facades\Instagram::class
+        'Instagram' => Ramsey\Laravel\OAuth2\Instagram\Facades\Instagram::class,
+        'Facebook' => Vinkla\Facebook\Facades\Facebook::class,
 
     ],
 

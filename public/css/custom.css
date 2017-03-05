@@ -85,3 +85,35 @@
     margin-bottom: 5px;
     margin-right: 5px;
 }
+
+.image-thumbnail {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+}
+
+.image-selected {
+    filter: brightness(0.5);
+}
+
+.tooltip.right > .tooltip-arrow {
+    border-right-color: #1DC7EA;
+}
+
+.tooltip.bottom > .tooltip-arrow {
+    border-bottom-color: #1DC7EA;
+}
+
+.tooltip.top > .tooltip-arrow {
+    border-top-color: #1DC7EA;
+}
+
+.tooltip.left > .tooltip-arrow {
+    border-left-color: #1DC7EA;
+}
+
+.tooltip > .tooltip-inner {
+    background-color: #1DC7EA;
+    text-shadow: 0 1px 1px #000;
+    font-weight: normal;
+}

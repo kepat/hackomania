@@ -1,67 +1,54 @@
 <script>
 
-    // Prepare the FB api
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '289093381507110',
-            xfbml: true,
-            version: 'v2.8'
-        });
-
-        FB.AppEvents.logPageView();
-    };
-
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    // Populate the images
     $(document).ready(function () {
-//        // Set the instagram api
-//        var api = "https://api.instagram.com/oauth/authorize/?";
-//
-//        // Set the client id
-//        api = api + 'client_id=925023492402457192f7db23d68f0c1e';
-//
-//        // Get the data from the api
-//        $.get(api, function (result) {
-//            console.log(result);
-//        });
-//
-//        var api = "https://api.instagram.com/v1/users/self/media/liked?access_token=qwe";
-//
-//        // Get the data from the api
-//        $.get(api, function (result) {
-//            console.log(result);
-//        });
-
+        $('[data-toggle="tooltip"]').tooltip();
     });
 
-    // Display the images
-    $('#btnDisplayImages').on('click', function () {
-        // Set the instagram api
-        var api = "https://api.instagram.com/oauth/authorize/?";
+    var selected = [];
 
-        // Set the client id
-        api = api + 'client_id=925023492402457192f7db23d68f0c1e';
+    // Image is clicked
+    $('[name=image]').on('click', function () {
+        var id = $(this).attr('id');
+        //Check if already existing
+        var index = selected.indexOf(id);
+        if (index > -1) {
+            selected.splice(index, 1);
+            $('#' + id).removeClass('image-selected');
+        } else {
+            selected.push(id);
+            $('#' + id).addClass('image-selected');
+        }
+    });
 
-        // Set other data needed
-        api = api + '&redirect_uri=http://sauchi.co&response_type=token&&scope=public_content';
+    // Payment or submit is called
+    $('[data-model=payment_modal]').on('click', function () {
+        var title = $(this).attr('data-title');
 
-        //&redirect_uri=REDIRECT-URI&response_type=token
+        // Set the modal title
+        var modal_title = $('#modal_title');
+        modal_title.html(title);
 
-        // Get the data from the api
-        $.get(api, function (result) {
-            console.log(result);
-        });
+        // Get the modal body and clear it too
+        var modal_body = $('#modal_body');
+        modal_body.html('');
 
+        // Compile the buttons
+        var html_data = '<div class="container-fluid"><div class="row">';
+
+        // First Payment
+        html_data = html_data + '<div class="col-md-6"><a href="print/payments/once"><button type="button" class="btn btn-info btn-fill">One Time Payment</button></a></div>';
+
+        // Second Payment option
+        html_data = html_data + '<div class="col-md-6"><a href="print/payments/monthly"><button type="button" class="btn btn-info btn-fill">Monthly Subscription</button></a></div>';
+
+        // End payment button
+        html_data = html_data + '</div></div>';
+
+        // Append the compiled html
+        modal_body.append(html_data);
+
+        // Display the modal
+        $('#modal').modal();
     });
 
 </script>
